@@ -14,7 +14,7 @@ xml.rss(:version=>"2.0", "xmlns:g" => "http://base.google.com/ns/1.0"){
         xml.link(product_url(product))
         xml.guid(product.id)
 
-        if product.images.count > 0
+        if product.images.size > 0
           xml.tag!('g:image_link', product.images.first.attachment.url(:large))
         end
 
@@ -22,8 +22,8 @@ xml.rss(:version=>"2.0", "xmlns:g" => "http://base.google.com/ns/1.0"){
         xml.tag!('g:condition', 'new')
         xml.tag!('g:id', product.id)
         xml.tag!('g:brand', 'Matthew Cookson')
-        xml.tag!('g:identifier_exist', 'FALSE')
-        xml.tag!('g:availability', 'in stock')
+        xml.tag!('g:identifier_exists', 'FALSE')
+        xml.tag!('g:availability', 'available for order')
         xml.tag!('g:google_product_category', 'Apparel & Accessories > Shoes')
       end
     end
